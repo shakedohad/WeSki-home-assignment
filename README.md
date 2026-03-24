@@ -51,8 +51,26 @@ In `weski-api`, you can set:
 - `HOTELS_SIMULATOR_API_URL`
 - `HOTELS_SIMULATOR_TIMEOUT_MS`
 - `HOTELS_SIMULATOR_CURRENCY`
+- `HOTELS_SIMULATOR_ADDITIONAL_GROUP_SIZE_OFFSET`
 
 If not set, defaults from the code are used.
+
+### Additional group size offset
+
+The supplier supports expanding the original `group_size` search so the app can also
+return larger room options.
+
+- `HOTELS_SIMULATOR_ADDITIONAL_GROUP_SIZE_OFFSET` defines how many extra group sizes to include
+- the search always starts from the original requested `group_size`
+- the expanded maximum is capped at `10`
+
+Examples:
+
+- requested `group_size=2`, offset `=2` → queries `2`, `3`, `4`
+- requested `group_size=4`, offset `=1` → queries `4`, `5`
+- requested `group_size=9`, offset `=3` → queries `9`, `10`
+
+If not set, the current default offset is `2`.
 
 ## Build commands
 
