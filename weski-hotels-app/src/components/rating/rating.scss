@@ -1,0 +1,14 @@
+.rating {
+  display: flex;
+  gap: 2px;
+
+  .rating-star {
+    font-size: 1rem;
+    line-height: 1;
+    color: #f5b400;
+  }
+
+  .rating-star-empty {
+    color: #d0d4de;
+  }
+}
