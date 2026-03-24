@@ -1,4 +1,4 @@
-import { SearchQuery } from "../types/index.js";
+import { HotelResult, SearchQuery } from "../types/index.js";
 
 /**
  * Abstract base class for hotel search suppliers.
@@ -13,7 +13,7 @@ export abstract class BaseSupplier {
    * Implementing classes should yield at least one batch as early as possible
    * to allow the client to start rendering results without waiting for all data.
    */
-  abstract search(query: SearchQuery): AsyncGenerator<unknown[]>;
+  abstract search(query: SearchQuery): AsyncGenerator<HotelResult[]>;
 
   /**
    * Optional hook to transform the outgoing query before it is sent
